@@ -1,0 +1,13 @@
+function z = mysystem(C,epsilon,kappa,delta,N1,N2,N3,xsep,ysep)
+z = [eq_psi(1+epsilon,0,C)
+    eq_psi(1-epsilon,0,C)
+    eq_psi(1-epsilon*delta,-epsilon*kappa,C)
+    eq_psi(xsep,ysep,C)
+    eq_psi_x(1-epsilon*delta,-epsilon*kappa,C)
+    eq_psi_y(1+epsilon,0,C)
+    eq_psi_y(1-epsilon,0,C)
+    eq_psi_x(xsep,ysep,C)
+    eq_psi_y(xsep,ysep,C)
+    eq_psi_yy(1+epsilon,0,C)+N1*eq_psi_x(1+epsilon,0,C)
+    eq_psi_yy(1-epsilon,0,C)+N2*eq_psi_x(1-epsilon,0,C)
+    eq_psi_xx(1-epsilon*delta,-epsilon*kappa,C)+N3*eq_psi_y(1-epsilon*delta,-epsilon*kappa,C)];

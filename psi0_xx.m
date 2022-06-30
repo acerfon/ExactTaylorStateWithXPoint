@@ -1,0 +1,3 @@
+function z=psi0_xx(x,y,lambda)
+z=(1./x-lambda^2*x).*besselj(1,x*lambda)...
+    +1/2*lambda./x.*(besselj(0,x*lambda)-besselj(2,x*lambda));
